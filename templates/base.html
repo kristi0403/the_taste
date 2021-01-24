@@ -17,6 +17,39 @@
 
 <body>
 
+    <header>
+        <!-- nav bar -->
+        <nav class="nav-extended text-shadow orange darken-1">
+            <div class="nav-wrapper">
+                <a href="{{ url_for('get_recipes') }}" class="brand-logo">The Taste</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-ellipsis-h"></i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="#">Cooking Tools</a></li>
+                    <li><a href="#">Recipes</a></li>
+                    <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#">Log In</a></li>
+                    <li><a href="#">New Recipes</a></li>
+                    <li><a href="#">Manage Recipes</a></li>
+                    <li><a href="#">Log Out</a></li>
+                    <li><a href="#">Register</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- mobile navbar -->
+        <ul class="sidenav" id="mobile-demo">
+            <li><h3 class="center-align text-darken-5"></h3></li>
+            <li><a href="#">Cooking Tools</a></li>
+            <li><a href="#">Recipes</a></li>
+            <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Log In</a></li>
+            <li><a href="#">New Recipes</a></li>
+            <li><a href="#">Manage Recipes</a></li>
+            <li><a href="#">Log Out</a></li>
+            <li><a href="#">Register</a></li>
+        </ul>
+    </header>
 
     {% block content %}
     {% endblock %}
