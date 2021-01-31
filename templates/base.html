@@ -19,7 +19,7 @@
 
     <header>
         <!-- nav bar -->
-        <nav class="nav-extended text-shadow orange darken-1">
+        <nav class="nav-extended text-shadow #ffa726 orange lighten-1">
             <div class="nav-wrapper">
                 <a href="{{ url_for('get_recipes') }}" class="brand-logo">The Taste</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-ellipsis-h"></i></a>
@@ -53,11 +53,26 @@
         </ul>
     </header>
 
-    {% block content %}
-    {% endblock %}
+    <section>
+        <!-- flash messages -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="row flashes">
+                        <h4 class="center-align">{{ message }}</h4>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </section>
+
+    <main class="container">
+        {% block content %}
+        {% endblock %}
+    </main>
 
     <footer>
-        <footer class="page-footer">
+        <footer class="page-footer #ffa726 orange lighten-1">
             <div class="container">
                 <div class="row">
                     <div class="col l6 s12">
