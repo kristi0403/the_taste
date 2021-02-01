@@ -1,25 +1,25 @@
 {% extends "base.html" %}
 {% block content %}
 <h3 class="center-align">Add recipe</h3>
-<div class="row">
+<div class="row card-pannel deep-orange lighten-5">
     <form class="col s12" method="POST" action="">
         <div class="row">
             <div class="input-field col l6 s12">
                 <i class="fas fa-utensils prefix"></i>
-                <input id="recipename" name="recipename" type="text" minlength="2" maxlength="50"
+                <input id="recipe_name" name="recipe_name" type="text" minlength="2" maxlength="50"
                     pattern="^[a-zA-Z]{2,50}$" class="validate" required>
-                <label for="recipename">Name</label>
+                <label for="recipe_name">Name</label>
             </div>
             <div class="row">
                 <div class="input-field col l6 s12">
                     <i class="fas fa-clipboard-list prefix"></i>
-                    <select>
+                    <select id="category_name" name="category_name">
                         <option value="" disabled selected>Category</option>
                         <option value="1">Food</option>
                         <option value="2">Desert</option>
                         <option value="3">Coctail</option>
                     </select>
-                    <label>Select</label>
+                    <label for="category_name">Select</label>
                 </div>
             </div>
         </div>
@@ -27,21 +27,21 @@
         <div class="row">
             <div class="input-field col l10 s12">
                 <i class="fas fa-info prefix"></i>
-                <textarea id="recipedescription" name="recipedescription" class="materialize-textarea validate"
+                <textarea id="recipe_description" name="recipe_description" class="materialize-textarea validate"
                     minlength="200" maxlength="400" pattern="^[a-zA-Z0-9:,]{200,400}$" required></textarea>
-                <label for="recipedescription">Description</label>
+                <label for="recipe_description">Description</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col l2 s6">
                 <i class="far fa-clock prefix"></i>
-                <textarea id="preparation" name="preparation" class="materialize-textarea validate" minlength="2"
+                <textarea id="preparation_time" name="preparation_time" class="materialize-textarea validate" minlength="2"
                     maxlength="17" pattern="^[a-zA-Z0-9:,]{2,17}$" required></textarea>
-                <label for="preparation">Preparation</label>
+                <label for="preparation_time">Preparation</label>
             </div>
             <div class="input-field col l2 s6">
                 <i class="fas fa-stopwatch prefix"></i>
-                <textarea id="cooking" name="cooking" class="materialize-textarea validate" minlength="2" maxlength="17"
+                <textarea id="cooking_time" name="cooking_time" class="materialize-textarea validate" minlength="2" maxlength="17"
                     pattern="^[a-zA-Z0-9:,]{2,17}$" required></textarea>
                 <label for="cooking">Cooking</label>
             </div>
@@ -94,9 +94,9 @@
         </div>
         <div class="row">
             <div class="input-field col s6">
-                <i class="fas fa-info prefix"></i>
-                <input id="icon_telephone" type="tel" class="validate">
-                <label for="icon_telephone">Allergens</label>
+                <i class="fas fa-exclamation prefix"></i>
+                <input id="allegens" name="allegens" type="tel" class="validate">
+                <label for="allegens">Allergens</label>
             </div>
         </div>
     </form>
