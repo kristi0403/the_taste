@@ -13,11 +13,11 @@
             <div class="row">
                 <div class="input-field col l6 s12">
                     <i class="fas fa-clipboard-list prefix"></i>
-                    <select id="category_name" name="category_name">
+                    <select id="category_name" name="category_name" class="validate" required>
                         <option value="" disabled selected>Category</option>
-                        <option value="1">Food</option>
-                        <option value="2">Desert</option>
-                        <option value="3">Coctail</option>
+                        {% for category in categories %}
+                            <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                        {% endfor %}
                     </select>
                     <label for="category_name">Select</label>
                 </div>
