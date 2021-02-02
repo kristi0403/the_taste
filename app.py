@@ -97,10 +97,36 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/add_recipe")
+@app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
+    allergens = mongo.db.allergens.find().sort("allergen_name", 1)
     categories = mongo.db.categories.find().sort("category_name", 1)
+    return render_template("add_recipe.html", allergens=allergens, categories=categories)
+
+
+@app.route("/get_categories")
+def get_categories():
+    categories = list(mongo.db.categories.find().sort("category_name", 1))
     return render_template("add_recipe.html", categories=categories)
+
+
+@app.route("/get_ingredients")
+def get_ingredients():
+    ingredients = list(mongo.db.ingredients.find().sort("ingredient_name", 1))
+    return render_template("add_ingredient.html", ingredients=ingredients)
+
+
+@app.route("/add_ingredient", methods=["GET", "POST"])
+def add_ingredient():
+    if request.method == "POST":
+        ingredient = {
+            "ingredient_name": request.form.get("ingredient_name"),
+            "ingredient_quantity": request.form.get("ingredient_quantity")
+        }
+        mongo.db.ingredients.insert_one(ingredient)
+        return redirect(url_for("get_ingredients"))
+    ingredients = mongo.db.ingredients.find().sort("ingredient_name", 1)
+    return render_template("add_ingredient.html", ingredients=ingredients)
 
 
 if __name__ == "__main__":

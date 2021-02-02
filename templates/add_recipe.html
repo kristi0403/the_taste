@@ -4,23 +4,23 @@
 <div class="row card-pannel deep-orange lighten-5">
     <form class="col s12" method="POST" action="">
         <div class="row">
-            <div class="input-field col l6 s12">
+            <div class="input-field col l10 s12">
                 <i class="fas fa-utensils prefix"></i>
-                <input id="recipe_name" name="recipe_name" type="text" minlength="2" maxlength="50"
-                    pattern="^[a-zA-Z]{2,50}$" class="validate" required>
+                <textarea id="recipe_name" name="recipe_name" minlength="2" maxlength="50" pattern="^[a-zA-Z]{2,50}$"
+                    class="materialize-textarea validate" required></textarea>
                 <label for="recipe_name">Name</label>
             </div>
-            <div class="row">
-                <div class="input-field col l6 s12">
-                    <i class="fas fa-clipboard-list prefix"></i>
-                    <select id="category_name" name="category_name" class="validate" required>
-                        <option value="" disabled selected>Category</option>
-                        {% for category in categories %}
-                            <option value="{{ category.category_name }}">{{ category.category_name }}</option>
-                        {% endfor %}
-                    </select>
-                    <label for="category_name">Select</label>
-                </div>
+        </div>
+        <div class="row">
+            <div class="input-field col l6 s12">
+                <i class="fas fa-clipboard-list prefix"></i>
+                <select id="category_name" name="category_name" class="validate" required>
+                    <option value="" disabled selected>Category</option>
+                    {% for category in categories %}
+                    <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                    {% endfor %}
+                </select>
+                <label for="category_name">Select</label>
             </div>
         </div>
 
@@ -35,68 +35,32 @@
         <div class="row">
             <div class="input-field col l2 s6">
                 <i class="far fa-clock prefix"></i>
-                <textarea id="preparation_time" name="preparation_time" class="materialize-textarea validate" minlength="2"
-                    maxlength="17" pattern="^[a-zA-Z0-9:,]{2,17}$" required></textarea>
+                <textarea id="preparation_time" name="preparation_time" class="materialize-textarea validate"
+                    minlength="2" maxlength="17" pattern="^[a-zA-Z0-9:,]{2,17}$" required></textarea>
                 <label for="preparation_time">Preparation</label>
             </div>
             <div class="input-field col l2 s6">
                 <i class="fas fa-stopwatch prefix"></i>
-                <textarea id="cooking_time" name="cooking_time" class="materialize-textarea validate" minlength="2" maxlength="17"
-                    pattern="^[a-zA-Z0-9:,]{2,17}$" required></textarea>
+                <textarea id="cooking_time" name="cooking_time" class="materialize-textarea validate" minlength="2"
+                    maxlength="17" pattern="^[a-zA-Z0-9:,]{2,17}$" required></textarea>
                 <label for="cooking">Cooking</label>
             </div>
         </div>
         <div class="row">
-            <h3>Ingredients</h3>
-            <table class="responsive-table">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Quantity</th>
-                        <th>Name</th>
-                        <th>Quantity</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    <tr>
-                        <td>Alvin</td>
-                        <td>Eclair</td>
-                        <td>$0.87</td>
-                        <td>$3.76</td>
-                    </tr>
-                    <tr>
-                        <td>Alan</td>
-                        <td>Jellybean</td>
-                        <td>$3.76</td>
-                        <td>$3.76</td>
-                    </tr>
-                    <tr>
-                        <td>Jonathan</td>
-                        <td>Lollipop</td>
-                        <td>$7.00</td>
-                        <td>$3.76</td>
-                    </tr>
-                     <tr>
-                        <td>Jonathan</td>
-                        <td>Lollipop</td>
-                        <td>$7.00</td>
-                        <td>$3.76</td>
-                    </tr>
-                    <tr>
-                        <td>Alan</td>
-                        <td>Jellybean</td>
-                        <td>$3.76</td>
-                        <td>$3.76</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="div col s12">
+                <a href="{{ url_for('add_ingredient') }}" class="waves-effect waves-light btn">Add Ingredients</a>
+            </div>
         </div>
         <div class="row">
-            <div class="input-field col s6">
-                <i class="fas fa-exclamation prefix"></i>
-                <input id="allegens" name="allegens" type="tel" class="validate">
-                <label for="allegens">Allergens</label>
+            <div class="input-field col l6 s12">
+                <i class="fas fa-exclamation-triangle prefix"></i>
+                <select multiple id="allergen_name" name="allergen_name" class="validate" required>
+                    <option value="" disabled selected>Allergens</option>
+                    {% for allergen in allergens %}
+                    <option value="{{ allergen.allergen_name }}">{{ allergen.allergen_name }}</option>
+                    {% endfor %}
+                </select>
+                <label for="allergen_name">Select</label>
             </div>
         </div>
     </form>
