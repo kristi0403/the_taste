@@ -46,10 +46,21 @@
                 <label for="cooking">Cooking</label>
             </div>
         </div>
-        <div class="row">
-            <div class="div col s12">
-                <a href="{{ url_for('add_ingredient') }}" class="waves-effect waves-light btn">Add Ingredients</a>
-            </div>
+        <div class="row center-align">
+            <h5 class="center-align">Ingredients</h5>
+            <ul class="collapsible">
+                {% for ingredient in ingredients %}
+                <li>
+                    <div class="collapsible-header">
+                        <strong>{{ ingredient.ingredient_name}}</strong>
+                    </div>
+                    <div class="collapsible-body"></div>
+                    <p>{{ ingredient.ingredient_quantity }}</p>
+                </li>
+                {% endfor %}
+            </ul>
+            <a href="{{ url_for('add_ingredient') }}" class="waves-effect waves-light btn">Add
+                            Ingredients</a>
         </div>
         <div class="row">
             <div class="input-field col l6 s12">
