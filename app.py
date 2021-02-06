@@ -158,8 +158,29 @@ def add_ingredient():
         mongo.db.ingredients.insert_one(ingredient)
         flash("Ingredient Successfully Added")
         return redirect(url_for("add_recipe"))
-    ingredients = mongo.db.ingredients.find().sort("ingredient_name", 1)
-    return render_template("add_ingredient.html", ingredients=ingredients,)
+    ingredient = mongo.db.ingredients.find().sort("ingredient_name", 1)
+    return render_template("add_ingredient.html", ingredient=ingredient)
+
+
+@app.route("/edit_ingredient/<ingredient_id>", methods=["GET", "POST"])
+def edit_ingredient(ingredient_id):
+    if request.method == "POST":
+        submit = {
+            "ingredient_name": request.form.get("ingredient_name"),
+            "ingredient_quantity": request.form.get("ingredient_quantity")
+        }
+        mongo.db.ingredients.update({"_id": ObjectId(ingredient_id)}, submit)
+        flash("Ingredient Updated")
+    ingredient = mongo.db.ingredients.find_one({"_id":
+                                                ObjectId(ingredient_id)})
+    return render_template("edit_ingredient.html", ingredient=ingredient)
+
+
+@app.route("/delete_ingredient/<ingredient_id>")
+def delete_ingredient(ingredient_id):
+    mongo.db.ingredients.remove({"_id": ObjectId(ingredient_id)})
+    flash("Ingredient Deleted")
+    return redirect(url_for("add_recipe"))
 
 
 if __name__ == "__main__":
