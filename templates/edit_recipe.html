@@ -41,13 +41,23 @@
             </div>
         </div>
         <div class="row">
+            <div class="input-field col l10 s12">
+                <i class="fas fa-blender prefix"></i>
+                <textarea id="recipe_preparation" name="recipe_preparation" class="materialize-textarea validate"
+                    minlength="200" maxlength="400" pattern="^[a-zA-Z0-9:,]{200,400}$" required>
+                    {{- recipe.preparation -}}
+                    </textarea>
+                <label for="recipe_preparation">Preparation</label>
+            </div>
+        </div>
+        <div class="row">
             <div class="input-field col l2 s6">
                 <i class="far fa-clock prefix"></i>
                 <textarea id="preparation_time" name="preparation_time" class="materialize-textarea validate"
                     minlength="2" maxlength="17" pattern="^[a-zA-Z0-9:,]{2,17}$" required>
                     {{- recipe.preparation_time -}}
                 </textarea>
-                <label for="preparation_time">Preparation</label>
+                <label for="preparation_time">Prep Time</label>
             </div>
             <div class="input-field col l2 s6">
                 <i class="fas fa-stopwatch prefix"></i>
