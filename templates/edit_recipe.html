@@ -2,7 +2,7 @@
 {% block content %}
 <h3 class="center-align">Edit recipe</h3>
 <div class="row card-pannel deep-orange lighten-5">
-    <form class="col s12" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
+    <form class="col s12" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id)}}">
         <div class="row">
             <div class="input-field col l10 s12">
                 <i class="fas fa-utensils prefix"></i>
@@ -68,11 +68,7 @@
                 <label for="cooking">Cooking</label>
             </div>
         </div>
-        <div class="row">
-            <div class="div col s12">
-                <a href="{{ url_for('add_ingredient') }}" class="waves-effect waves-light btn">Add Ingredients</a>
-            </div>
-        </div>
+
         <div class="row">
             <div class="input-field col l6 s12">
                 <i class="fas fa-exclamation-triangle prefix"></i>
@@ -89,11 +85,41 @@
                 <label for="allergen_name">Select</label>
             </div>
         </div>
+        <div class="container">
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Quantity</th>
+                        <th></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for ingredient in ingredients %}
+                    <tr>
+                        <td><strong>{{ ingredient.ingredient_name }}</strong>
+                        </td>
+                        <td>
+                            <p>{{ ingredient.ingredient_quantity }}</p>
+                        <td>
+                            <div class="row center-align">
+                                <a href="{{ url_for('edit_ingredient', ingredient_id=ingredient._id)}}"
+                                    class="btn-small">Edit</a>
+                            </div>
+                        </td>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
         <div class="row">
             <div class="col s12 center-align">
                 <!-- cancell button -->
                 <a href="{{ url_for('get_recipes') }}" class="btn-large">
-                    Cancell <i class="far fa-times-circle"></i>
+                    Done <i class="far fa-times-circle"></i>
                 </a>
                 <!-- Submit button -->
                 <button type="submit" class="btn-large">

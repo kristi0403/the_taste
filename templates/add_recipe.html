@@ -33,10 +33,10 @@
             </div>
         </div>
         <div class="row">
-             <div class="input-field col l10 s12">
+            <div class="input-field col l10 s12">
                 <i class="fas fa-blender prefix"></i>
                 <textarea id="recipe_preparation" name="recipe_preparation" class="materialize-textarea validate"
-                    minlength="200" maxlength="400" pattern="^[a-zA-Z0-9:,]{200,400}$" required></textarea>
+                    minlength="200" maxlength="1000" pattern="^[a-zA-Z0-9:,]{200,400}$" required></textarea>
                 <label for="recipe_preparation">Preparation</label>
             </div>
         </div>
@@ -54,38 +54,7 @@
                 <label for="cooking">Cooking</label>
             </div>
         </div>
-        <div class="container center">
-            <h4 class="center-align">Ingredients
-                <a href="{{ url_for('add_ingredient') }}" class="waves-effect waves-light btn-floating">
-                    <i class="material-icons">add</i>
-                </a>
-            </h4>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Quantity</th>
-                        <th></th>
-                    </tr>
-                </thead>
 
-                <tbody>
-                    {% for ingredient in ingredients %}
-                    <tr>
-                        <td><strong>{{ ingredient.ingredient_name }}</strong>
-                        </td>
-                        <td>
-                            <p>{{ ingredient.ingredient_quantity }}</p>
-                        <td>
-                            <a href="{{ url_for('edit_ingredient', ingredient_id=ingredient._id)}}" class="waves-effect waves-light btn-small">Edit</a>
-                            <a href="{{ url_for('delete_ingredient', ingredient_id=ingredient._id)}}" class="waves-effect waves-light btn-small">Delete</a>
-                        </td>
-                        </td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </div>
         <div class="row">
             <div class="input-field col l6 s12">
                 <i class="fas fa-exclamation-triangle prefix"></i>
@@ -98,11 +67,34 @@
                 <label for="allergen_name">Select</label>
             </div>
         </div>
-        <div class="row">
-            <div class="col s12 center-align">
-                <button type="submit" class="btn-large">
-                    Add Recipe
-                </button>
+        <div class="container">
+            <!-- Editable table -->
+            <div class="card">
+                <h3 class="card-header text-center py-4">Ingredients</h3>
+                <div class="card-body">
+                    <div id="table" class="table-editable">
+                        <span class="table-add float-right mb-3 mr-2"><a href="#!" class="text-success"><i
+                                    class="fas fa-plus fa-2x" aria-hidden="true"></i></a></span>
+                        <table class="table table-bordered table-responsive-md  text-center">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">Ingredient Name</th>
+                                    <th class="text-center">Ingredient Quantity</th>
+                                    <th class="text-center">Remove</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 center-align">
+                    <button type="submit" class="btn-large">
+                        Add Recipe
+                    </button>
+                </div>
             </div>
         </div>
     </form>

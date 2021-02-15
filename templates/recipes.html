@@ -7,12 +7,12 @@
 </div>
 <div class="row">
     {% for recipe in recipes %}
-    <div class="col s12 m6 l6">
+    <div class="col s12 m12 l6">
         <div class="row">
             <div class="card">
                 <div class="card-body">
-                    <h6 class="card-name"><strong>{{- recipe.recipe_name -}}</strong></h6>
-                    <textarea readonly class="materialize-textarea center-align">{{- recipe.recipe_description -}}</textarea>
+                    <h6 class="card-name center-align"><strong>{{- recipe.recipe_name -}}</strong></h6>
+                    <p id="description" class="text-break center-align">{{- recipe.recipe_description -}}</p>
                 </div>
                 <div class="card-body">
                     <div class="col l6 s6 card-content">
@@ -27,12 +27,68 @@
                     </div>
                     <ul class="collapsible">
                         <li>
-                            <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
-                            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                            <div class="collapsible-header"><i class="fas fa-exclamation-triangle" prefix></i> Allergens
+                            </div>
+                            <div class="collapsible-body"><span>
+                                    {% for allergen in allergens %}
+                                    {{ allergen.allergen_name}}
+                                    {% endfor %}
+                                </span></div>
                         </li>
                         <li>
-                            <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
-                            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+                            <div class="collapsible-header"><i class="fas fa-clipboard-list" prefix></i> Igredients
+                                <!-- Modal Trigger -->
+                                <a class="waves-effect waves-light btn modal-trigger" href="#modal1"> View</a>
+                            </div>
+                            <!-- Modal Structure -->
+                            <div id="modal1" class="modal">
+                                <div class="modal-content">
+                                    <h4>Ingredients</h4>
+                                    <div>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th>Name</th>
+                                                    <th>Quantity</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                {% for ingredient in ingredients %}
+                                                <tr>
+                                                    <td><strong>{{ ingredient.ingredient_name }}</strong>
+                                                    </td>
+                                                    <td>
+                                                        <p>{{ ingredient.ingredient_quantity }}</p>
+                                                    </td>
+                                                </tr>
+                                                {% endfor %}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="collapsible-header"><i class="fas fa-blender"></i> Preparation
+                                <!-- Modal Trigger -->
+                                <a class="waves-effect waves-light btn modal-trigger" href="#modal2"> View</a>
+                            </div>
+                            <!-- Modal Structure -->
+                            <div id="modal2" class="modal">
+                                <div class="modal-content">
+                                    <div class="card-panel teal">
+                                    <h4 class="white-text">Preparation</h4>
+                                    <span class="white-text">
+                                        <h6 class="card-name center-align"><strong>{{- recipe.recipe_name -}}</strong>
+                                        </h6>
+                                        <p id="preparation" class="text-break center-align">
+                                            {{- recipe.preparation -}}</p>
+                                    </span>
+                                    </div>
+                                </div>
+                            </div>
                         </li>
                     </ul>
                 </div>
