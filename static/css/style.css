@@ -34,3 +34,11 @@
 padding-top: 1.4rem;
 }
 
+.img-thumbnail {
+	width: 300px;
+    height: 300px;
+}
+
+.profile_details {
+    margin: 20px;
+}
