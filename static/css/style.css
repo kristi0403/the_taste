@@ -40,5 +40,6 @@ padding-top: 1.4rem;
 }
 
 .profile_details {
-    margin: 20px;
+    margin-top: 20px;
+    display: block;
 }
