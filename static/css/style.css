@@ -49,3 +49,7 @@ padding-top: 1.4rem;
     background-size: cover;
     background-position: center center;
 }
+
+.row{
+    display: block;
+}
