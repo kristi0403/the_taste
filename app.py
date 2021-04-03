@@ -24,6 +24,12 @@ def get_recipes():
     return render_template("recipes.html", recipes=recipes)
 
 
+@app.route("/get_my_recipes")
+def get_my_recipes():
+    my_recipes = list(mongo.db.recipes.find({"created_by": session["user"]}))
+    return render_template("profile.html", my_recipes=my_recipes)
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
