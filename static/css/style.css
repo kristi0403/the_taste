@@ -43,3 +43,9 @@ padding-top: 1.4rem;
     margin-top: 20px;
     display: block;
 }
+
+.background_image{
+    background: url("../images/background_1.jpeg") no-repeat fixed;
+    background-size: cover;
+    background-position: center center;
+}
