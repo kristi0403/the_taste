@@ -10,10 +10,12 @@
     <div class="recipes col s12 m12 l4 xl3">
         <div class="row-gallery justify-content-around">
             <div class="card">
-                <img class="card-img-top" src="../static/images/default_image.jpeg" alt="recipe default photo">
                 <div class="card-block">
-                    <h6 class="card-title center-align"><strong>{{- recipe.recipe_name -}}</strong></h6>
-                    <p id="description" class="text-break center-align">{{- recipe.recipe_description -}}</p>
+                        <h6 class="card-title center-align"><strong>{{- recipe.recipe_name -}}</strong></h6>
+                </div>
+                <img class="card-img-top" src="../static/images/default_image.jpeg" alt="recipe default photo">
+                <div class="card-block"> 
+                    <p id="description" class="card-text-break center-align">{{- recipe.recipe_description -}}</p>
                 </div>
                 <div class="card-body">
                     <div class="col l6 s6 card-content">
