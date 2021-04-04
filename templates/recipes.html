@@ -28,8 +28,17 @@
                             <p>{{- recipe.cooking_time}}</p>
                         </i>
                     </div>
-                    <ul class="collapsible">
-                        <li>
+                    <!--modals-->
+                    <!-- Modal Structure -->
+                    <div id="modal1" class="modal">
+                        <div class="modal-content">
+                        <i class="fas fa-blender prefix"><h4>Preparation</h4></i>
+                        <p id="preparation" class="text-break center-align">
+                            {{- recipe.preparation -}}
+                        </p>
+                        </div>
+                        <div class="modal-content">
+                            <li>
                             <div class="collapsible-header"><i class="fas fa-exclamation-triangle" prefix></i> Allergens
                             </div>
                             <div class="collapsible-body"><span>
@@ -38,15 +47,9 @@
                                     {% endfor %}
                                 </span></div>
                         </li>
-                        <li>
-                            <div class="collapsible-header"><i class="fas fa-clipboard-list" prefix></i> Igredients
-                                <!-- Modal Trigger -->
-                                <a class="waves-effect waves-light btn modal-trigger" href="#modal1"> View</a>
-                            </div>
-                            <!-- Modal Structure -->
-                            <div id="modal1" class="modal">
-                                <div class="modal-content">
-                                    <h4>Ingredients</h4>
+                        </div>
+                        <div class="modal-content">
+                            <h4>Ingredients</h4>
                                     <div>
                                         <table>
                                             <thead>
@@ -70,35 +73,14 @@
                                             </tbody>
                                         </table>
                                     </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="collapsible-header"><i class="fas fa-blender"></i> Preparation
-                                <!-- Modal Trigger -->
-                                <a class="waves-effect waves-light btn modal-trigger" href="#modal2"> View</a>
-                            </div>
-                            <!-- Modal Structure -->
-                            <div id="modal2" class="modal">
-                                <div class="modal-content">
-                                    <div class="card-panel teal">
-                                    <h4 class="white-text">Preparation</h4>
-                                    <span class="white-text">
-                                        <h6 class="card-name center-align"><strong>{{- recipe.recipe_name -}}</strong>
-                                        </h6>
-                                        <p id="preparation" class="text-break center-align">
-                                            {{- recipe.preparation -}}</p>
-                                    </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
+                        </div>
+                    </div>
                 </div>
                 <div class="card-action center-align">
+                    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">View</a>
                     {% if session.user|lower == recipe.created_by|lower %}
-                    <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn-small">Delete</a>
                     <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn-small">Edit</a>
+                    <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn-small">Delete</a>
                     {% endif %}
                 </div>
             </div>
