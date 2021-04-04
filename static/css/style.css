@@ -53,3 +53,24 @@ padding-top: 1.4rem;
 .row{
     display: block;
 }
+
+
+.card {
+	display: flex;
+	background-color: beige;
+	margin-bottom: 40px;
+	outline-width: 7px;
+	outline-color: #7690ad;
+    outline-style: solid;
+    width: 95%;
+}
+
+
+.card-block {
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.justify-content-around {
+	justify-content: space-around;
+}
