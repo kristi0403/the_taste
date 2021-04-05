@@ -24,6 +24,12 @@ def get_recipes():
     return render_template("recipes.html", recipes=recipes)
 
 
+@app.route("/view_recipe/<recipe_id>", methods=["GET"])
+def view_recipe(recipe_id):
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    return render_template("view_recipe.html", recipe=recipe)
+
+
 @app.route("/get_my_recipes")
 def get_my_recipes():
     my_recipes = list(mongo.db.recipes.find({"created_by": session["user"]}))

@@ -28,56 +28,9 @@
                             <p>{{- recipe.cooking_time}}</p>
                         </i>
                     </div>
-                    <!--modals-->
-                    <!-- Modal Structure -->
-                    <div id="modal1" class="modal">
-                        <div class="modal-content">
-                        <i class="fas fa-blender prefix"><h4>Preparation</h4></i>
-                        <p id="preparation" class="text-break center-align">
-                            {{- recipe.preparation -}}
-                        </p>
-                        </div>
-                        <div class="modal-content">
-                            <li>
-                            <div class="collapsible-header"><i class="fas fa-exclamation-triangle" prefix></i> Allergens
-                            </div>
-                            <div class="collapsible-body"><span>
-                                    {% for allergen in allergens %}
-                                    {{ allergen.allergen_name}}
-                                    {% endfor %}
-                                </span></div>
-                        </li>
-                        </div>
-                        <div class="modal-content">
-                            <h4>Ingredients</h4>
-                                    <div>
-                                        <table>
-                                            <thead>
-                                                <tr>
-                                                    <th>Name</th>
-                                                    <th>Quantity</th>
-                                                    <th></th>
-                                                </tr>
-                                            </thead>
-
-                                            <tbody>
-                                                {% for ingredient in ingredients %}
-                                                <tr>
-                                                    <td><strong>{{ ingredient.ingredient_name }}</strong>
-                                                    </td>
-                                                    <td>
-                                                        <p>{{ ingredient.ingredient_quantity }}</p>
-                                                    </td>
-                                                </tr>
-                                                {% endfor %}
-                                            </tbody>
-                                        </table>
-                                    </div>
-                        </div>
-                    </div>
                 </div>
                 <div class="card-action center-align">
-                    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">View</a>
+                    <a class="waves-effect waves-light btn modal-trigger" href="{{ url_for('view_recipe', recipe_id=recipe._id )}}">View</a>
                     {% if session.user|lower == recipe.created_by|lower %}
                     <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn-small">Edit</a>
                     <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn-small">Delete</a>
