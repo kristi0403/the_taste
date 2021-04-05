@@ -76,6 +76,11 @@ padding-top: 1.4rem;
     color: orange;
 }
 
+.profile_name{
+    font-family: 'Dancing Script', cursive;
+    color: orange;
+}
+
 @media (min-width:1000px){
 .view {
     width: 75%;

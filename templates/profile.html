@@ -5,7 +5,7 @@
         <img src="../static/images/user_photo.jpeg" class="img-thumbnail" alt="users profile picture">
     </div>
     <div class="col s12 m6 l4 xl4">
-        <div class="card-panel">
+        <div class="card-panel profile_name #fff3e0 orange lighten-5">
             <h5 class="center-align">
                 {{ session.user }}'s Profile
             </h5>
@@ -15,17 +15,20 @@
 </div>
 <div class="row center-align">
     <div class="card-panel #ffe0b2 orange lighten-4">
-    <h2 class="profile_title">Recipes made with love</h2>
+    <h2 class="profile_title">Recipes made by me</h2>
     </div>
 </div>
 <div class="row">
     {% for recipe in my_recipes %}
-    <div class="col s12 m12 l6">
-        <div class="row">
+    <div class="recipes col s12 m12 l4 xl3">
+        <div class="row-gallery justify-content-around">
             <div class="card #ffe0b2 orange lighten-4">
-                <div class="card-body">
-                    <h6 class="card-name center-align"><strong>{{- recipe.recipe_name -}}</strong></h6>
-                    <p id="description" class="text-break center-align">{{- recipe.recipe_description -}}</p>
+                <div class="card-block">
+                        <h6 class="card-title center-align"><strong>{{- recipe.recipe_name -}}</strong></h6>
+                </div>
+                <img class="card-img-top" src="../static/images/default_image.jpeg" alt="recipe default photo">
+                <div class="card-block"> 
+                    <p id="description" class="card-text-break center-align">{{- recipe.recipe_description -}}</p>
                 </div>
                 <div class="card-body">
                     <div class="col l6 s6 card-content">
@@ -38,78 +41,12 @@
                             <p>{{- recipe.cooking_time}}</p>
                         </i>
                     </div>
-                    <ul class="collapsible">
-                        <li>
-                            <div class="collapsible-header"><i class="fas fa-exclamation-triangle" prefix></i> Allergens
-                            </div>
-                            <div class="collapsible-body"><span>
-                                    {% for allergen in allergens %}
-                                    {{ allergen.allergen_name}}
-                                    {% endfor %}
-                                </span></div>
-                        </li>
-                        <li>
-                            <div class="collapsible-header"><i class="fas fa-clipboard-list" prefix></i> Igredients
-                                <!-- Modal Trigger -->
-                                <a class="waves-effect waves-light btn modal-trigger" href="#modal1"> View</a>
-                            </div>
-                            <!-- Modal Structure -->
-                            <div id="modal1" class="modal">
-                                <div class="modal-content">
-                                    <h4>Ingredients</h4>
-                                    <div>
-                                        <table>
-                                            <thead>
-                                                <tr>
-                                                    <th>Name</th>
-                                                    <th>Quantity</th>
-                                                    <th></th>
-                                                </tr>
-                                            </thead>
-
-                                            <tbody>
-                                                {% for ingredient in ingredients %}
-                                                <tr>
-                                                    <td><strong>{{ ingredient.ingredient_name }}</strong>
-                                                    </td>
-                                                    <td>
-                                                        <p>{{ ingredient.ingredient_quantity }}</p>
-                                                    </td>
-                                                </tr>
-                                                {% endfor %}
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="collapsible-header"><i class="fas fa-blender"></i> Preparation
-                                <!-- Modal Trigger -->
-                                <a class="waves-effect waves-light btn modal-trigger" href="#modal2"> View</a>
-                            </div>
-                            <!-- Modal Structure -->
-                            <div id="modal2" class="modal">
-                                <div class="modal-content">
-                                    <div class="card-panel teal">
-                                        <h4 class="white-text">Preparation</h4>
-                                        <span class="white-text">
-                                            <h6 class="card-name center-align">
-                                                <strong>{{- recipe.recipe_name -}}</strong>
-                                            </h6>
-                                            <p id="preparation" class="text-break center-align">
-                                                {{- recipe.preparation -}}</p>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
                 </div>
                 <div class="card-action center-align">
+                    <a class="waves-effect waves-light btn modal-trigger #ff9e80 deep-orange accent-1" href="{{ url_for('view_recipe', recipe_id=recipe._id )}}">View</a>
                     {% if session.user|lower == recipe.created_by|lower %}
-                    <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn-small">Delete</a>
-                    <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn-small">Edit</a>
+                    <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn-small #ff9e80 deep-orange accent-1">Edit</a>
+                    <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn-small #ff9e80 deep-orange accent-1">Delete</a>
                     {% endif %}
                 </div>
             </div>
