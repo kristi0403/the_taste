@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
+<div class="container-fluid recipe_form">
 <div class="row card-pannel deep-orange lighten-5">
+    <h3 class="center-align">Edit recipe</h3>
     <form class="col s12" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id)}}">
         <div class="row">
             <div class="input-field col l10 s12">
@@ -88,5 +90,6 @@
             </div>
         </div>
     </form>
+</div>
 </div>
 {% endblock %}
