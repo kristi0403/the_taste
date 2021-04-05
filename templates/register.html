@@ -1,19 +1,20 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="row #ffca28 #ffe0b2 orange lighten-4">
-<h3 class="center-align">Register</h3>
-</div>
+<div></div>
 
 <div class="row">
-    <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
+    <form class="col s12 m6 offset-m3" method="POST" action="{{ url_for('register') }}">
+        <div class="row #ffca28 #ffca28 amber lighten-1">
+        <h3 class="center-align">Register</h3>
+    </div>
         <div class="card-panel">
             <!-- Username -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-user prefix"></i>
-                    <input id="username" name="username" type="text" minlength="5"
-                        maxlength="15" pattern="^[a-zA-Z0-9@!$&]{5,15}$" class="validate" required>
+                    <input id="username" name="username" type="text" minlength="5" maxlength="15"
+                        pattern="^[a-zA-Z0-9@!$&]{5,15}$" class="validate" required>
                     <label for="username">Username</label>
                 </div>
             </div>
@@ -21,15 +22,15 @@
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-lock prefix"></i>
-                    <input id="password" name="password" type="password" minlength="6"
-                         maxlength="10" pattern="^[a-zA-Z0-9@!$&]{6,10}$" class="validate" required>
+                    <input id="password" name="password" type="password" minlength="6" maxlength="10"
+                        pattern="^[a-zA-Z0-9@!$&]{6,10}$" class="validate" required>
                     <label for="password">Password</label>
                 </div>
             </div>
 
             <!-- Register -->
             <div class="row">
-                <button type="submit" class="col s12 btn-large #ffe0b2 orange lighten-4">
+                <button type="submit" class="col s12 btn-large #ffca28 amber lighten-1">
                     Register
                 </button>
             </div>
