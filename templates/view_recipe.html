@@ -8,44 +8,22 @@
     </div>
     <div class="card #ffe0b2 orange lighten-4">
         <div class="card-block">
-            <h4><i class="fas fa-blender prefix"> Preparation</i></h4>
-            <p id="preparation" class="text-break center-align">
+            <h3><i class="fas fa-blender prefix"> Preparation</i></h3>
+            <h6><p id="preparation" class="text-break center-align">
                 {{- recipe.preparation -}}
             </p>
+            </h6>
         </div>
         <div>
-            <div class="card-block"><h5><i class="fas fa-exclamation-triangle" prefix></i> Allergens!</h5>
-            </div>
-            <div>
-                <h5>Contains:</h5>
-                <li>
-                    
-                    {{- recipe.allergens -}}
-                </li>   
-            </div>
-        </div>
-        <div>
-            <h4>Ingredients</h4>
-            <div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Quantity</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        <tr>
-                            <td><strong>{{- recipe.ingredient_name -}}</strong>
-                            </td>
-                            <td>
-                                <p>{{- recipe.ingredient_quantity -}}</p>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="card-block">
+            <h5><i class="fas fa-clipboard-list prefix"> Ingredients</i></h5>
+            <div class="card-body">
+                    <div class="col l6 s6 card-content">
+                        <i class="far fa-clock prefix">
+                            <li><h5>{{- recipe.ingredient -}}</h5></li>
+                        </i>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="card-action center-align">

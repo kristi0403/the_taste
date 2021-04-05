@@ -121,20 +121,14 @@ def add_recipe():
             "recipe_description": request.form.get("recipe_description"),
             "preparation_time": request.form.get("preparation_time"),
             "cooking_time": request.form.get("cooking_time"),
-            "allergens": request.form.getlist("allergen_name"),
-            "ingredient": [request.form.getlist("ingredient_name"),
-                           request.form.getlist("ingredient_quantity")],
+            "ingredient": request.form.get("recipe_ingredients"),
             "preparation": request.form.get("recipe_preparation"),
             "created_by": session["user"]
         }
         mongo.db.recipes.insert_one(recipe)
         return redirect(url_for("get_recipes"))
-    allergens = mongo.db.allergens.find().sort("allergen_name", 1)
     categories = mongo.db.categories.find().sort("category_name", 1)
-    ingredients = mongo.db.ingredients.find().sort("ingredient_name", 1)
-    return render_template("add_recipe.html",
-                           allergens=allergens, categories=categories,
-                           ingredients=ingredients)
+    return render_template("add_recipe.html", categories=categories)
 
 
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
@@ -146,7 +140,7 @@ def edit_recipe(recipe_id):
             "recipe_description": request.form.get("recipe_description"),
             "preparation_time": request.form.get("preparation_time"),
             "cooking_time": request.form.get("cooking_time"),
-            "allergens": request.form.getlist("allergen_name"),
+            "ingredient": request.form.get("recipe_ingredients"),
             "preparation": request.form.get("recipe_preparation"),
             "created_by": session["user"]
         }
@@ -154,11 +148,8 @@ def edit_recipe(recipe_id):
         flash("Recipe Updated")
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
-    allergens = mongo.db.allergens.find().sort("allergen_name", 1)
-    ingredients = mongo.db.ingredients.find().sort("ingredient_name", 1)
     return render_template("edit_recipe.html",
-                           recipe=recipe, categories=categories,
-                           allergens=allergens, ingredients=ingredients)
+                           recipe=recipe, categories=categories)
 
 
 @app.route("/delete_recipe/<recipe_id>")
@@ -166,21 +157,6 @@ def delete_recipe(recipe_id):
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
     flash("Recipe Successfully Deleted")
     return redirect(url_for("get_recipes"))
-
-
-@app.route("/delete_ingredient/<ingredient_id>")
-def delete_ingredient(ingredient_id):
-    mongo.db.ingredients.remove({"_id": ObjectId(ingredient_id)})
-    flash("Ingredient Deleted")
-    return redirect(url_for("get_ingredients"))
-
-
-@app.route("/get_ingredients")
-def get_ingredients():
-    ingredients = mongo.db.ingredients.find().sort("ingredient_name", 1)
-    recipe = mongo.db.recipes.find().sort("recipe_name", 1)
-    return render_template("ingredients.html", ingredients=ingredients,
-                           recipe=recipe)
 
 
 if __name__ == "__main__":
