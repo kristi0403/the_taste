@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
-<h3 class="center-align">Add recipe</h3>
+<div class="container-fluid recipe_form">
 <div class="row card-pannel deep-orange lighten-5">
+    <h3 class="center-align">Add recipe</h3>
     <form class="col s12" method="POST" action="{{ url_for('add_recipe') }}">
         <div class="row">
             <div class="input-field col l10 s12">
@@ -98,5 +99,6 @@
             </div>
         </div>
     </form>
+</div>
 </div>
 {% endblock %}
