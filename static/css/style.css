@@ -71,6 +71,10 @@ padding-top: 1.4rem;
 	justify-content: space-around;
 }
 
+.profile_title{
+    font-family: 'Dancing Script', cursive;
+    color: orange;
+}
 
 @media (min-width:1000px){
 .view {
