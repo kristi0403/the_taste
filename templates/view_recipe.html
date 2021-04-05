@@ -48,6 +48,14 @@
                 </table>
             </div>
         </div>
+        <div class="card-action center-align">
+                    <a class="waves-effect waves-light btn modal-trigger" href="{{ url_for('get_recipes' )}}">Done</a>
+                    {% if session.user|lower == recipe.created_by|lower %}
+                    <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn-small">Edit</a>
+                    <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn-small">Delete</a>
+                    {% endif %}
+                </div>
     </div>
+    
 </div>
 {% endblock %}
