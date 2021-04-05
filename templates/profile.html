@@ -1,55 +1,54 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="row profile_details">
-    <div class="col s12 m6 l4 xl4">
-        <img src="../static/images/user_photo.jpeg" class="img-thumbnail" alt="users profile picture">
-    </div>
-    <div class="col s12 m6 l4 xl4">
-        <div class="card-panel profile_name #fff3e0 orange lighten-5">
-            <h5 class="center-align">
-                {{ session.user }}'s Profile
-            </h5>
-        </div>
-    </div>
-
+   <div class="col s12 m6 l4 xl4">
+      <img src="../static/images/user_photo.jpeg" class="img-thumbnail" alt="users profile picture">
+   </div>
+   <div class="col s12 m6 l4 xl4">
+      <div class="card-panel profile_name #fff3e0 orange lighten-5">
+         <h5 class="center-align">
+            {{ session.user }}'s Profile
+         </h5>
+      </div>
+   </div>
 </div>
 <div class="row center-align">
-    <h2 class="profile_title">Recipes made by me</h2>
+   <h2 class="profile_title">Recipes made by me</h2>
 </div>
 <div class="row">
-    {% for recipe in my_recipes %}
-    <div class="recipes col s12 m12 l4 xl3">
-        <div class="row-gallery justify-content-around">
-            <div class="card #ffe0b2 orange lighten-4">
-                <div class="card-block">
-                        <h6 class="card-title center-align"><strong>{{- recipe.recipe_name -}}</strong></h6>
-                </div>
-                <img class="card-img-top" src="../static/images/default_image.jpeg" alt="recipe default photo">
-                <div class="card-block"> 
-                    <p id="description" class="card-text-break center-align">{{- recipe.recipe_description -}}</p>
-                </div>
-                <div class="card-body">
-                    <div class="col l6 s6 card-content">
-                        <i class="far fa-clock prefix">
-                            <p>{{- recipe.preparation_time}}</p>
-                        </i>
-                    </div>
-                    <div class="col l6 s6 card-content">
-                        <i class="fas fa-stopwatch prefix">
-                            <p>{{- recipe.cooking_time}}</p>
-                        </i>
-                    </div>
-                </div>
-                <div class="card-action center-align">
-                    <a class="waves-effect waves-light btn modal-trigger #ff9e80 deep-orange accent-1" href="{{ url_for('view_recipe', recipe_id=recipe._id )}}">View</a>
-                    {% if session.user|lower == recipe.created_by|lower %}
-                    <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn-small #ff9e80 deep-orange accent-1">Edit</a>
-                    <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn-small #ff9e80 deep-orange accent-1">Delete</a>
-                    {% endif %}
-                </div>
+   {% for recipe in my_recipes %}
+   <div class="recipes col s12 m12 l4 xl3">
+      <div class="row-gallery justify-content-around">
+         <div class="card #ffe0b2 orange lighten-4">
+            <div class="card-block">
+               <h6 class="card-title center-align"><strong>{{- recipe.recipe_name -}}</strong></h6>
             </div>
-        </div>
-    </div>
-    {% endfor %}
+            <img class="card-img-top" src="../static/images/default_image.jpeg" alt="recipe default photo">
+            <div class="card-block">
+               <p id="description" class="card-text-break center-align">{{- recipe.recipe_description -}}</p>
+            </div>
+            <div class="card-body">
+               <div class="col l6 s6 card-content">
+                  <i class="far fa-clock prefix">
+                     <p>{{- recipe.preparation_time}}</p>
+                  </i>
+               </div>
+               <div class="col l6 s6 card-content">
+                  <i class="fas fa-stopwatch prefix">
+                     <p>{{- recipe.cooking_time}}</p>
+                  </i>
+               </div>
+            </div>
+            <div class="card-action center-align">
+               <a class="waves-effect waves-light btn modal-trigger #ff9e80 deep-orange accent-1" href="{{ url_for('view_recipe', recipe_id=recipe._id )}}">View</a>
+               {% if session.user|lower == recipe.created_by|lower %}
+               <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn-small #ff9e80 deep-orange accent-1">Edit</a>
+               <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn-small #ff9e80 deep-orange accent-1">Delete</a>
+               {% endif %}
+            </div>
+         </div>
+      </div>
+   </div>
+   {% endfor %}
 </div>
 {% endblock %}
