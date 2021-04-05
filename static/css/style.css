@@ -71,9 +71,12 @@ padding-top: 1.4rem;
 	justify-content: space-around;
 }
 
+
 @media (min-width:1000px){
 .view {
     width: 75%;
-    margin-top: 4%;
+    margin-top: 4%;}
+.flash_messages{
+ width: 50%;
 }
 }

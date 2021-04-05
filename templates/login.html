@@ -1,12 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
+<div>
 
-<div class="row center-align #ffca28 #ffe0b2 orange lighten-4">
-<h3 class="center-align">Log In</h3>
 </div>
+
 
 <div class="row">
     <form class="col s12 m6 offset-m3" method="POST" action="{{ url_for('login') }}">
+        <div class="row center-align #ffca28 amber lighten-1">
+<h3 class="center-align">Log In</h3>
+</div>
         <div class="card-panel">
             <!-- Username -->
             <div class="row">
@@ -29,7 +32,7 @@
 
             <!-- Log In -->
             <div class="row">
-                <button type="submit" class="col s12 btn-large #ffe0b2 orange lighten-4">
+                <button type="submit" class="col s12 btn-large #ffca28 amber lighten-1">
                     Log In
                 </button>
             </div>
