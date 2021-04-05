@@ -1,55 +1,61 @@
-.text-shadow{
-    text-shadow: 6px 6px 6px  black;
-}
-  body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
+/*----main css---*/
 
-  main {
-    flex: 1 0 auto;
-  }
+body {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+}
+
+main {
+	flex: 1 0 auto;
+}
+
+.background_image {
+	background: url("../images/background_1.jpeg") no-repeat fixed;
+	background-size: cover;
+	background-position: center center;
+}
+
+
+/*----classes---*/
+
+.text-shadow {
+	text-shadow: 6px 6px 6px black;
+}
 
 .btn-small {
-    margin: 5px;
+	margin: 5px;
 }
 
 .card-name {
-    padding-top: 10px;
+	padding-top: 10px;
 }
 
-
-#description{
-    padding: 5px 10px;
-    height: 78px;
+#description {
+	padding: 5px 10px;
+	height: 78px;
 }
-
 
 .pt-3-half {
-padding-top: 1.4rem;
+	padding-top: 1.4rem;
 }
 
 .img-thumbnail {
 	width: 300px;
-    height: 300px;
+	height: 300px;
 }
 
 .profile_details {
-    margin-top: 20px;
-    display: block;
+	margin-top: 20px;
+	display: block;
 }
 
-.background_image{
-    background: url("../images/background_1.jpeg") no-repeat fixed;
-    background-size: cover;
-    background-position: center center;
+.row {
+	display: block;
 }
 
-.row{
-    display: block;
-}
 
+/*----card elements---*/
 
 .card {
 	display: flex;
@@ -57,10 +63,9 @@ padding-top: 1.4rem;
 	margin-bottom: 40px;
 	outline-width: 7px;
 	outline-color: #7690ad;
-    outline-style: solid;
-    width: 95%;
+	outline-style: solid;
+	width: 95%;
 }
-
 
 .card-block {
 	margin-bottom: 20px;
@@ -71,55 +76,55 @@ padding-top: 1.4rem;
 	justify-content: space-around;
 }
 
-.profile_title{
-    font-family: 'Dancing Script', cursive;
-    color: orange;
-    background-color: wheat;
-    box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(255, 139, 253, 0);
+.profile_title {
+	font-family: 'Dancing Script', cursive;
+	color: orange;
+	background-color: wheat;
+	box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(255, 139, 253, 0);
 	text-shadow: #fff 0px 0px 5px, #fff 0px 0px 10px, #fff 0px 0px 105px, #cb8211 0px 0px 20px, #cb8211 0px 0px 30px, #cb8211 0px 0px 90px, #cb8211 0px 0px 100px, #cb8211 0px 0px 105px;
 }
 
-.profile_name{
-    font-family: 'Dancing Script', cursive;
-    color: orange;
-    
-    
+.profile_name {
+	font-family: 'Dancing Script', cursive;
+	color: orange;
 }
 
-@media (min-width:1000px){
-.view {
-    width: 75%;
-    margin-top: 4%;}
-.recipe_form {
-    width: 75%;
-}
-.flash_messages{
- width: 50%;
-}
-.main_title{
-    font-family: 'Gloria Hallelujah', cursive;
-    font-size: 100px;
-}
+.search_bar {
+	margin-bottom: 50px;
 }
 
-.search_bar{
-    margin-bottom: 50px;
-    
+.action_button {
+	position: relative;
+	top: 30px;
 }
 
-.action_button{
-        position: relative;
-    top: 30px;
-}
-
-
-.main_title{
+.main_title {
 	font-family: 'Gloria Hallelujah', cursive;
 	border: 1px solid;
-    margin: 20px;
-    color: orangered;
-    background-color: wheat;
+	margin: 20px;
+	color: orangered;
+	background-color: wheat;
 	text-align: center;
 	box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(255, 139, 253, 0);
 	text-shadow: #fff 0px 0px 5px, #fff 0px 0px 10px, #fff 0px 0px 105px, #cb8211 0px 0px 20px, #cb8211 0px 0px 30px, #cb8211 0px 0px 90px, #cb8211 0px 0px 100px, #cb8211 0px 0px 105px;
+}
+
+
+/*----xl and large media screens---*/
+
+@media (min-width:1000px) {
+	.view {
+		width: 75%;
+		margin-top: 4%;
+	}
+	.recipe_form {
+		width: 75%;
+	}
+	.flash_messages {
+		width: 50%;
+	}
+	.main_title {
+		font-family: 'Gloria Hallelujah', cursive;
+		font-size: 100px;
+	}
 }
