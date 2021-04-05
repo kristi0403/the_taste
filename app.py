@@ -27,7 +27,7 @@ def get_recipes():
 @app.route("/view_recipe/<recipe_id>", methods=["GET"])
 def view_recipe(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    return render_template("view_recipe.html", recipe=recipe)
+    return render_template("view_recipe.html", recipe=recipe,)
 
 
 @app.route("/get_my_recipes")
@@ -122,8 +122,8 @@ def add_recipe():
             "preparation_time": request.form.get("preparation_time"),
             "cooking_time": request.form.get("cooking_time"),
             "allergens": request.form.getlist("allergen_name"),
-            "ingredient_name": request.form.getlist("ingredient_name"),
-            "ingredient_uantity": request.form.getlist("ingredient_quantity"),
+            "ingredient": [request.form.getlist("ingredient_name"),
+                           request.form.getlist("ingredient_quantity")],
             "preparation": request.form.get("recipe_preparation"),
             "created_by": session["user"]
         }

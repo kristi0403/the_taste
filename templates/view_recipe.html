@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container-fluid view">
+    <div class="row">
+        <div class="col s3">
+
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-block">
+            <h4><i class="fas fa-blender prefix"> Preparation</i></h4>
+            <p id="preparation" class="text-break center-align">
+                {{- recipe.preparation -}}
+            </p>
+        </div>
+        <div>
+            <div class="card-block"><h5><i class="fas fa-exclamation-triangle" prefix></i> Allergens!</h5>
+            </div>
+            <div>
+                <h5>Contains:</h5>
+                <li>
+                    
+                    {{- recipe.allergens -}}
+                </li>   
+            </div>
+        </div>
+        <div>
+            <h4>Ingredients</h4>
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Quantity</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td><strong>{{ recipe.ingredient_name }}</strong>
+                            </td>
+                            <td>
+                                <p>{{ recipe.ingredient_quantity }}</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
