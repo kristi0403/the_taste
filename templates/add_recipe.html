@@ -55,41 +55,13 @@
                 <label for="cooking">Cooking</label>
             </div>
         </div>
-
-        <div class="row">
-            <div class="input-field col l6 s12">
-                <i class="fas fa-exclamation-triangle prefix"></i>
-                <select multiple id="allergen_name" name="allergen_name" class="validate" required>
-                    <option value="" disabled selected>Allergens</option>
-                    {% for allergen in allergens %}
-                    <option value="{{ allergen.allergen_name }}">{{ allergen.allergen_name }}</option>
-                    {% endfor %}
-                </select>
-                <label for="allergen_name">Select</label>
+        <div class="input-field col l10 s12">
+                <i class="fas fa-blender prefix"></i>
+                <textarea id="recipe_ingredients" name="recipe_ingredients" class="materialize-textarea validate"
+                    minlength="200" maxlength="1000" pattern="^[a-zA-Z0-9:,]{200,400}$" required></textarea>
+                <label for="recipe_Ingredients">Ingredients</label>
             </div>
-        </div>
         <div class="container">
-            <!-- Editable table -->
-            <div class="card">
-                <h3 class="card-header text-center py-4">Ingredients</h3>
-                <div class="card-body">
-                    <div id="table" class="table-editable">
-                        <span class="table-add float-right mb-3 mr-2"><a href="#!" class="text-success"><i
-                                    class="fas fa-plus fa-2x" aria-hidden="true"></i></a></span>
-                        <table class="table table-bordered table-responsive-md  text-center">
-                            <thead>
-                                <tr>
-                                    <th class="text-center">Ingredient Name</th>
-                                    <th class="text-center">Ingredient Quantity</th>
-                                    <th class="text-center">Remove</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
             <div class="row">
                 <div class="col s12 center-align">
                     <button type="submit" class="btn-large">
