@@ -74,11 +74,16 @@ padding-top: 1.4rem;
 .profile_title{
     font-family: 'Dancing Script', cursive;
     color: orange;
+    background-color: wheat;
+    box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(255, 139, 253, 0);
+	text-shadow: #fff 0px 0px 5px, #fff 0px 0px 10px, #fff 0px 0px 105px, #cb8211 0px 0px 20px, #cb8211 0px 0px 30px, #cb8211 0px 0px 90px, #cb8211 0px 0px 100px, #cb8211 0px 0px 105px;
 }
 
 .profile_name{
     font-family: 'Dancing Script', cursive;
     color: orange;
+    
+    
 }
 
 @media (min-width:1000px){
@@ -91,4 +96,30 @@ padding-top: 1.4rem;
 .flash_messages{
  width: 50%;
 }
+.main_title{
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 100px;
+}
+}
+
+.search_bar{
+    margin-bottom: 50px;
+    
+}
+
+.action_button{
+        position: relative;
+    top: 30px;
+}
+
+
+.main_title{
+	font-family: 'Gloria Hallelujah', cursive;
+	border: 1px solid;
+    margin: 20px;
+    color: orangered;
+    background-color: wheat;
+	text-align: center;
+	box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(255, 139, 253, 0);
+	text-shadow: #fff 0px 0px 5px, #fff 0px 0px 10px, #fff 0px 0px 105px, #cb8211 0px 0px 20px, #cb8211 0px 0px 30px, #cb8211 0px 0px 90px, #cb8211 0px 0px 100px, #cb8211 0px 0px 105px;
 }
