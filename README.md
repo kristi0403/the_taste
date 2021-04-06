@@ -116,7 +116,7 @@ The elements are responsible designed to suit the changes made to the screen.
 3. Make users abble to add videos made by them to to show the preparation steps of the recipes.
 
 
-##Technologies Used
+## Technologies Used
 
 Languages Used
 -HTML : divs are used more to group different section 
@@ -149,7 +149,7 @@ This project uses GitHub, for version control and final project backup.
 mongoDB as database to store the recipes and the users.
 
 
-##Testing
+## Testing
 * Add Recipe Page:
 
     * Go to the "New Recipe" page
@@ -177,13 +177,13 @@ The app was tested on iphone 7 and iphone 11 and also using google chrome inspec
 Both landscape and portrait doesn't seem to have any problem on responsiveness only in some screens the recipe cards move e bit more on
 the left that it should .
 
-##Bugs
+## Bugs
 When i had the first add recipe loyout i had the ingridients an array that included 2 arrays one ingridients name and one ingridients quantity.
 When retriving the data from the database they showed as 2 arrays of elements and i couldn't slice them or join them.
 
 I changed the data type and at the moment they are presented as strings.
 
-##Deployment
+## Deployment
 
 Used git add to add files and after that git commit to coment the files addeted and deleted and git push 
 at the end to move the files to the github pages.
@@ -203,16 +203,16 @@ The final project deployment is been done by Heroku:
    11.Upon successful deployment Heroku will give you the URL that is hosted your app
 
 
-##Credits
+## Credits
 
-###Content
+### Content
 
     * The recipes were obtained from bbcgoodfood.com
 
-###Media
+### Media
 
     * The photos used for the recipes and the profile were obtained from google images
 
-##Acknowledgements
+## Acknowledgements
 
     - My Mentor for continuous helpful feedback.
