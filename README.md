@@ -105,8 +105,45 @@ The elements are responsible designed to suit the changes made to the screen.
 3.  My Recipes - kocated on the profile,  provides the user with the recipes that they have added themselves.
     The user's recipes can be edited and deleted by using the buttons displayed under the recipes.
 4.  Login/profile - When first selected the user will be prompted to create a username to login to the application so that they can add recipes to the database.
-    Once logged in the user will be presented with their Profile which provides all of their recipes,
-    along with 3 data charts depicting the number of base ingredients, meal types and food flavours associated with the recipes which have been added.
+    Once logged in the user will be presented with their Profile which provides all of their recipes.
+5.  Social Links - Provides users with links to the website social media pages.
+    (Links NOT LIVE as this project is for learning purpose ).
 
 
  //Features to add//
+1. Make users abble to add their profile picture as for the moment the app is using a default one.
+2. Make users abble to add photos taken by them to their recipes as for the moment the app is using a default one.
+3. Make users abble to add videos made by them to to show the preparation steps of the recipes.
+
+
+##Technologies Used
+
+Languages Used
+-HTML : divs are used more to group different section 
+-CSS3 : used to style the html elements
+-JS : used to start some of the elements of materialize
+-Python : all the logic of retriving elements from database or puting elements on the database or login in checking Users,
+register, loging, editing recipes, geting recipes, geting user recipes, are done using python.
+
+Frameworks, Libraries & Programs Used
+
+Bootstrap 4.4.1:
+(Bootstrap was used to assist with the responsiveness and styling of the website.)
+
+Font Awesome:
+(Font Awesome was used on all pages throughout the website to add icons for aesthetic and UX purposes.)
+
+Flask: as python micro-framework.
+
+Git
+(Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.)
+
+Materiaalize CSS
+
+Heroku
+This project uses Heroku, a web hosting service that supports Python applications, for final project deployment.
+
+GitHub
+This project uses GitHub, for version control and final project backup.
+
+mongoDB as database to store the recipes and the users.
