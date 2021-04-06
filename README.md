@@ -185,11 +185,11 @@ I changed the data type and at the moment they are presented as strings.
 
 ##Deployment
 
-Platform used to deploy the project is Github through github pages.
 Used git add to add files and after that git commit to coment the files addeted and deleted and git push 
 at the end to move the files to the github pages.
+Heroku was conected to github throug github pages so every time you push updates on Heroku aswell
 
-The final project deployment is been done by Heroku
+The final project deployment is been done by Heroku:
     1.The following section describes the process to deploy this project to Heroku.
     2.Ensure all required technologies are installed locally, as per the requirements.txtfile.
     3.Via Linux Terminal, login to Heroku, using 'heroku login' command. Input Heroku login details.
@@ -200,4 +200,19 @@ The final project deployment is been done by Heroku
     8.Select settings. Select ‘Reveal Config'. Add IP 0.0.0.0 and PORT 5000.
     9.From 'More' menu on the top right, select 'Restart all dynos'.
    10.View app: In settings, select Domain URL, NOT Git URL to view your hosted application.
-   11.Deployed via Heroku: the-taste
+   11.Upon successful deployment Heroku will give you the URL that is hosted your app
+
+
+##Credits
+
+###Content
+
+    * The recipes were obtained from bbcgoodfood.com
+
+###Media
+
+    * The photos used for the recipes and the profile were obtained from google images
+
+##Acknowledgements
+
+    - My Mentor for continuous helpful feedback.
