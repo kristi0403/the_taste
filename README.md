@@ -88,3 +88,25 @@ Also the main color used for the page is orange but in different shades using th
 Typography
 
 The main font family used is "Roboto" for the buttons and  'Gloria Hallelujah' for the titles.
+
+## Features
+The page is been programed to work in 3 different screen sizes.
+1)PC
+2)Tablet
+3)Smartphone
+The elements are responsible designed to suit the changes made to the screen.
+
+1. Navbar - Consist of the name which returns the user to home page everytime pressed.There are also links to home, profile, new recipe,
+   log in, log out.
+2. Home - The homepage consist of 4 sample recipes.
+   Shows the user "All Recipes" from ALL users which have been entered on the site.
+   The user can then filter or browse through the recipes.
+    The can view more information on each recipe by selectign the "View" link which delivers the user to the "View recipe" page.
+3.  My Recipes - kocated on the profile,  provides the user with the recipes that they have added themselves.
+    The user's recipes can be edited and deleted by using the buttons displayed under the recipes.
+4.  Login/profile - When first selected the user will be prompted to create a username to login to the application so that they can add recipes to the database.
+    Once logged in the user will be presented with their Profile which provides all of their recipes,
+    along with 3 data charts depicting the number of base ingredients, meal types and food flavours associated with the recipes which have been added.
+
+
+ //Features to add//
