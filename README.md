@@ -51,3 +51,17 @@ Users can use even the search bar to write text to find in the matching recipes 
 4)The users can edit their recipes without needing to delete the entire recipe only changing particular components .
 5)A person that is entusiastic for cooking and want to shere their love and ideas with the rest of the world.
 
+
+ ## Design process
+ Above are the first ideas of the webpage shown in wireframes
+![New Wireframe 1 (1)](https://user-images.githubusercontent.com/63249988/113645217-62a5a280-967e-11eb-8241-d1d4a498cb20.png)
+![New Wireframe 1 (2)](https://user-images.githubusercontent.com/63249988/113645221-646f6600-967e-11eb-9e08-1deabab6ea18.png)
+![New Wireframe 1 (3)](https://user-images.githubusercontent.com/63249988/113645223-646f6600-967e-11eb-9bba-8fea5cfe7360.png)
+![New Wireframe 1](https://user-images.githubusercontent.com/63249988/113645227-6507fc80-967e-11eb-9828-ee41ec5a3067.png)
+![New Wireframe 2 (1)](https://user-images.githubusercontent.com/63249988/113645229-65a09300-967e-11eb-846a-9f975ee72521.png)
+![New Wireframe 2 (2)](https://user-images.githubusercontent.com/63249988/113645231-65a09300-967e-11eb-93cc-3e1cf83d945e.png)
+![New Wireframe 2 (3)](https://user-images.githubusercontent.com/63249988/113645233-66392980-967e-11eb-93f4-928ced236b75.png)
+![New Wireframe 2 (4)](https://user-images.githubusercontent.com/63249988/113645234-66392980-967e-11eb-8279-8f1c3f8e9630.png)
+![New Wireframe 2](https://user-images.githubusercontent.com/63249988/113645235-66d1c000-967e-11eb-9121-a0e1fa7cde8f.png)
+![New Wireframe 3](https://user-images.githubusercontent.com/63249988/113645236-66d1c000-967e-11eb-8552-a4245e0dcc5c.png)
+![New Wireframe 4](https://user-images.githubusercontent.com/63249988/113645238-676a5680-967e-11eb-9996-a53096a73051.png)
