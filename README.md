@@ -147,3 +147,17 @@ GitHub
 This project uses GitHub, for version control and final project backup.
 
 mongoDB as database to store the recipes and the users.
+
+
+##Testing
+* Add Recipe Page:
+
+    * Go to the "New Recipe" page
+    * Try to submit the empty form and verify that the recipe will not submit without a RECIPE NAME.
+    * Try to submit the empty form with no description and verify that the recipe will not submit without a RECIPE DESCRIPTION.
+    * Try to submit the empty form with no category and verify that the recipe will not submit without a CATEGORY SELECTED.
+    * Try to submit the empty form with no name and verify that the recipe will not submit without a RECIPE NAME.
+    * Try to submit the empty form with no preparation and verify that the recipe will not submit without a RECIPE PREPARATION STEPS.
+    * Try to submit the empty form with no cooking time and verify that the recipe will not submit without a RECIPE COOKING TIME
+    * Try to submit the empty form with no preparation and verify that the recipe will not submit without a RECIPE PREPARATION TIME.
+    * Try to submit the empty form with no ingredients and verify that the recipe will not submit without  RECIPE INGREDIENTS.
