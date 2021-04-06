@@ -161,3 +161,43 @@ mongoDB as database to store the recipes and the users.
     * Try to submit the empty form with no cooking time and verify that the recipe will not submit without a RECIPE COOKING TIME
     * Try to submit the empty form with no preparation and verify that the recipe will not submit without a RECIPE PREPARATION TIME.
     * Try to submit the empty form with no ingredients and verify that the recipe will not submit without  RECIPE INGREDIENTS.
+
+* Log In Page:
+
+    * Try to loog in when no register and verify that will not login without registe.
+
+* Register Page:
+    * Try to register when already have acount and veryfied that cant register if already registered.
+
+* Edit/delete recipe:
+    * Try to edit/delete when no created by you and verified you can only edit them ore delete them if they were creeated by you
+
+
+The app was tested on iphone 7 and iphone 11 and also using google chrome inspect on all the devices available on the inspector.
+Both landscape and portrait doesn't seem to have any problem on responsiveness only in some screens the recipe cards move e bit more on
+the left that it should .
+
+##Bugs
+When i had the first add recipe loyout i had the ingridients an array that included 2 arrays one ingridients name and one ingridients quantity.
+When retriving the data from the database they showed as 2 arrays of elements and i couldn't slice them or join them.
+
+I changed the data type and at the moment they are presented as strings.
+
+##Deployment
+
+Platform used to deploy the project is Github through github pages.
+Used git add to add files and after that git commit to coment the files addeted and deleted and git push 
+at the end to move the files to the github pages.
+
+The final project deployment is been done by Heroku
+    1.The following section describes the process to deploy this project to Heroku.
+    2.Ensure all required technologies are installed locally, as per the requirements.txtfile.
+    3.Via Linux Terminal, login to Heroku, using 'heroku login' command. Input Heroku login details.
+    4.Create new Heroku app, using 'heroku apps:create appname' command.
+    5.Push project to Heroku, using 'push -u heroku master' command.
+    6.Create scale, using 'heroku ps:scale web=1' command.
+    7.Login to Heroku and select newly created app.
+    8.Select settings. Select ‘Reveal Config'. Add IP 0.0.0.0 and PORT 5000.
+    9.From 'More' menu on the top right, select 'Restart all dynos'.
+   10.View app: In settings, select Domain URL, NOT Git URL to view your hosted application.
+   11.Deployed via Heroku: the-taste
