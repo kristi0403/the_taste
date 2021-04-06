@@ -65,3 +65,26 @@ Users can use even the search bar to write text to find in the matching recipes 
 ![New Wireframe 2](https://user-images.githubusercontent.com/63249988/113645235-66d1c000-967e-11eb-9121-a0e1fa7cde8f.png)
 ![New Wireframe 3](https://user-images.githubusercontent.com/63249988/113645236-66d1c000-967e-11eb-8552-a4245e0dcc5c.png)
 ![New Wireframe 4](https://user-images.githubusercontent.com/63249988/113645238-676a5680-967e-11eb-9996-a53096a73051.png)
+
+how the actual app was finished
+
+![Screenshot 2021-04-05 at 23 54 40](https://user-images.githubusercontent.com/63249988/113645708-4fdf9d80-967f-11eb-8b55-9876a3bd0b03.png)
+![Screenshot 2021-04-05 at 23 55 00](https://user-images.githubusercontent.com/63249988/113645713-51a96100-967f-11eb-9be5-f0f7c1b49049.png)
+![Screenshot 2021-04-05 at 23 54 37](https://user-images.githubusercontent.com/63249988/113645716-5241f780-967f-11eb-876a-0dbc36b0029b.png)
+![Screenshot 2021-04-05 at 23 54 48](https://user-images.githubusercontent.com/63249988/113645720-52da8e00-967f-11eb-843f-41e7ed5ec719.png)
+![Screenshot 2021-04-05 at 23 55 05](https://user-images.githubusercontent.com/63249988/113645723-540bbb00-967f-11eb-9454-8df510ca4ca2.png)
+![Screenshot 2021-04-05 at 23 55 48](https://user-images.githubusercontent.com/63249988/113645727-54a45180-967f-11eb-8fd7-38e89ef7d9bb.png)
+![Screenshot 2021-04-05 at 23 54 45](https://user-images.githubusercontent.com/63249988/113645730-55d57e80-967f-11eb-9a3d-931c12fcd9e5.png)
+
+The images dispaly the app on pc screen tablet and phone both landscape and portrait
+
+
+Colour Scheme
+
+I through to use more the background image to look more like the citchen with the marble and the ingredients.
+Also the main color used for the page is orange but in different shades using the lighten atribute.
+
+
+Typography
+
+The main font family used is "Roboto" for the buttons and  'Gloria Hallelujah' for the titles.
